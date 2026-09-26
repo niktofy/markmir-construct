@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarkMir Construct / Case de la zero, betonare, reparații la cheie</title>
+<meta name="description" content="MarkMir Construct, Chișinău. Case de la zero, betonare, săpături și reparații la cheie. Peste 13 ani de experiență. Tel/WhatsApp +373 61 001 900.">
+<link rel="icon" href="img/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0b; --panel:#131315; --panel2:#1a1a1d; --line:rgba(255,255,255,.08);
+  --text:#f4f1ea; --muted:#8f8b84; --soft:#c9c4ba;
+  --gold:#d9a650; --gold-hi:#f3d08a; --gold-lo:#b07a2c;
+  --gold-grad:linear-gradient(135deg,#f6d894 0%,#d9a650 45%,#a8712a 100%);
+  --ease:cubic-bezier(0.215,0.61,0.355,1);
+  --pad:clamp(80px,9vw,150px); --wrap:1520px; --gut:clamp(16px,4vw,56px);
+  --c:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.h{font-family:Unbounded,sans-serif;font-weight:700;letter-spacing:-.01em;line-height:1.2;text-transform:uppercase}
+.cap{font:600 11px/1.4 Inter,sans-serif;text-transform:uppercase;letter-spacing:.15em;color:var(--muted)}
+.gold{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cut{clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+.cut-r{clip-path:polygon(0 0,calc(100% - var(--c)) 0,100% var(--c),100% 100%,var(--c) 100%,0 calc(100% - var(--c)))}
+.sec-t{font-size:clamp(28px,3.2vw,52px)}
+.sec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:clamp(36px,4vw,60px)}
+.sec-top p{color:var(--muted);max-width:420px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+.eyebrow.cap{color:var(--gold)}
+
+/* buttons */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;height:58px;padding:0 30px;font:600 13px Inter,sans-serif;text-transform:uppercase;letter-spacing:.12em;border:0;cursor:pointer;
+  clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);
+  transition:transform .3s var(--ease),filter .3s var(--ease),background .3s var(--ease),color .3s var(--ease)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s var(--ease)}
+.btn:hover::after{left:130%}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold-grad);color:#1a1206;box-shadow:0 10px 40px -10px rgba(217,166,80,.6)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--text);backdrop-filter:blur(10px)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.b-wa{background:linear-gradient(135deg,#2FE271,#1C9E51);color:#fff}
+.b-ig{background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 45%,#6228d7 100%);color:#fff}
+.b-fb{background:linear-gradient(135deg,#3d8bff,#0b5fd6);color:#fff}
+.b-tt{background:#000;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.b-tt svg{filter:drop-shadow(-1.5px -1.5px 0 #25F4EE) drop-shadow(1.5px 1.5px 0 #FE2C55)}
+.b-wa:hover,.b-ig:hover,.b-fb:hover,.b-tt:hover{filter:brightness(1.1)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s var(--ease)}
+header.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:94px;transition:height .5s var(--ease)}
+header.solid .bar{height:76px}
+.logo img{height:56px;width:auto;transition:height .5s var(--ease)}
+header.solid .logo img{height:46px}
+nav.main{display:flex;gap:36px}
+nav.main a{font-size:14px;font-weight:500;color:var(--soft);position:relative;padding:6px 0;transition:color .3s var(--ease)}
+nav.main a:hover{color:var(--text)}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+nav.main a:hover::after{transform:scaleX(1)}
+.bar-right{display:flex;align-items:center;gap:26px}
+.tel{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25}
+.tel b{font:600 16px Inter,sans-serif;letter-spacing:.01em}
+.tel span{font-size:11px;color:var(--muted)}
+.bar-right .btn{height:46px;padding:0 22px;font-size:12px}
+.burger{display:none;width:46px;height:46px;background:rgba(255,255,255,.06);border:0;color:var(--text);cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:currentColor;margin:4px auto}
+.mnav{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut);opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+.mnav.open{opacity:1;pointer-events:auto}
+.mnav a{font:700 26px Unbounded,sans-serif;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--line)}
+.mnav .tel-m{margin-top:30px;font:600 20px Inter;color:var(--gold);border:0}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:130px 0 90px}
+.hero-bg{position:absolute;inset:-60px;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:blur(28px) saturate(1.3);transform:scale(1.15);opacity:.55}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(60% 70% at 78% 40%,rgba(217,166,80,.18),transparent 70%),linear-gradient(90deg,var(--bg) 0%,rgba(10,10,11,.92) 40%,rgba(10,10,11,.55) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 35%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(30px,5vw,90px);align-items:center;width:100%}
+.hero-txt{max-width:680px}
+.hero h1{font-size:clamp(38px,4.6vw,78px);font-weight:800;line-height:1.1}
+.when h2{font-size:clamp(26px,2.6vw,42px)}
+.hero h1 .gold{display:block}
+.hero .lead{margin-top:28px;max-width:500px;color:var(--soft);font-size:17.5px}
+.hero-cta{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px}
+.trust{margin-top:56px;display:grid;grid-template-columns:repeat(3,auto);gap:0;justify-content:start;border-top:1px solid var(--line);padding-top:26px}
+.trust div{padding-right:34px;margin-right:34px;border-right:1px solid var(--line)}
+.trust div:last-child{border:0;margin:0;padding:0}
+.trust b{display:block;font:700 22px Unbounded,sans-serif}
+.trust span{font-size:13px;color:var(--muted)}
+
+.hero-media{position:relative;height:min(640px,72vh);min-height:480px}
+.hcard{position:absolute;overflow:hidden;background:var(--panel);box-shadow:0 40px 80px -30px rgba(0,0,0,.9);transition:transform .6s var(--ease)}
+.hcard img{width:100%;height:100%;object-fit:cover}
+.hcard::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);pointer-events:none}
+.hc-a{right:0;top:0;width:58%;height:100%}
+.hc-b{left:4%;top:4%;width:40%;height:46%}
+.hc-c{left:0;bottom:6%;width:46%;height:40%}
+.tag{position:absolute;left:14px;bottom:14px;padding:8px 12px;font:600 10.5px Inter;letter-spacing:.14em;text-transform:uppercase;background:rgba(10,10,11,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
+.badge{position:absolute;z-index:3;right:-18px;bottom:-26px;width:148px;height:148px;border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(10,10,11,.6);backdrop-filter:blur(12px);border:1px solid rgba(217,166,80,.45);box-shadow:0 0 60px -10px rgba(217,166,80,.5)}
+.badge b{display:block;font:800 40px/1 Unbounded,sans-serif}
+.badge span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);display:block;margin-top:6px}
+.badge::before{content:"";position:absolute;inset:8px;border-radius:50%;border:1px dashed rgba(217,166,80,.35);animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);overflow:hidden;padding:22px 0}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq span{font:600 clamp(16px,1.6vw,22px) Unbounded,sans-serif;text-transform:uppercase;white-space:nowrap;padding-right:28px;color:var(--soft)}
+.mq span i{font-style:normal;color:var(--gold);padding-left:28px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section.s{padding:var(--pad) 0}
+
+/* when */
+.when{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+.when ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.when li{padding:20px 0;border-bottom:1px solid var(--line);font:600 clamp(14px,1.1vw,17px) Unbounded,sans-serif;text-transform:uppercase;display:flex;gap:16px;align-items:center;color:var(--soft);transition:color .3s var(--ease),padding .3s var(--ease)}
+.when li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);flex:none}
+.when li:hover{color:var(--text);padding-left:6px}
+
+/* bento */
+.bento{display:grid;grid-template-columns:1fr 1.15fr 1fr;grid-template-rows:300px 300px;gap:16px}
+.bx{position:relative;overflow:hidden;background:var(--panel);display:flex;flex-direction:column;padding:32px;isolation:isolate}
+.bx::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line);pointer-events:none;transition:box-shadow .5s var(--ease)}
+.bx:hover::after{box-shadow:inset 0 0 0 1px rgba(217,166,80,.5)}
+.bx .bimg{position:absolute;inset:0;z-index:-1}
+.bx .bimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.bx:hover .bimg img{transform:scale(1.05)}
+.bx .num{font:700 13px Unbounded,sans-serif;color:var(--gold);letter-spacing:.06em}
+.bx h3{font-size:clamp(20px,1.7vw,28px);margin:12px 0 12px}
+.bx p{color:var(--soft);font-size:15px;max-width:340px}
+.bx .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.bx .tags span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;background:rgba(255,255,255,.07);backdrop-filter:blur(6px)}
+.bx .more{margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.bx .more svg{width:16px;height:16px;color:var(--gold);transition:transform .3s var(--ease)}
+.bx:hover .more svg{transform:translateX(4px)}
+.bx-tall{grid-row:span 2}
+.bx-photo .bimg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.55) 45%,rgba(10,10,11,.15) 100%)}
+.bx-photo{justify-content:flex-end}
+.bx-photo .more{margin-top:24px}
+.bx-split{padding-right:48%;background:#050505}
+.bx-split .bimg{left:52%}
+.bx-split .bimg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,transparent 45%)}
+.bx-grey{background:linear-gradient(135deg,#1f1f22,#141416)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:stretch}
+.about-img{position:relative;min-height:600px}
+.about-img .ph{position:absolute;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+.about-img .ph img{width:100%;height:100%;object-fit:cover}
+.about-img .ph-1{left:0;top:0;width:54%;height:80%}
+.about-img .ph-2{right:0;bottom:0;width:42%;height:66%}
+.about-img .tag{bottom:16px;left:16px}
+.about h2{margin-bottom:22px}
+.about .intro{color:var(--soft);font-size:17px;max-width:560px}
+.stats{margin-top:40px}
+.stat{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.stat{grid-template-columns:1fr auto;gap:12px 24px;align-items:center}
+.stat b{grid-column:1}
+.stat .cap{grid-column:1;grid-row:2}
+.stat p{grid-column:2;grid-row:1/3}
+.stat b{font:800 clamp(44px,4.2vw,72px)/.9 Unbounded,sans-serif;letter-spacing:-.03em;white-space:nowrap}
+.stat .cap{color:var(--text);font-size:12px}
+.stat p{font-size:13px;color:var(--muted);text-align:right;max-width:210px}
+
+/* process */
+.proc{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(30px,5vw,90px);align-items:start}
+.steps{list-style:none;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:1fr auto;gap:10px 30px;padding:26px 0;border-bottom:1px solid var(--line)}
+.steps h3{font:600 18px Inter,sans-serif}
+.steps p{grid-column:1;color:var(--muted);font-size:15px;max-width:520px}
+.steps em{grid-row:1;grid-column:2;font:500 15px Unbounded,sans-serif;font-style:normal;color:var(--gold)}
+.proc-img{position:sticky;top:110px;height:620px;overflow:hidden}
+.proc-img img{width:100%;height:100%;object-fit:cover}
+.price{position:absolute;left:20px;right:20px;bottom:20px;padding:22px 24px;background:rgba(10,10,11,.7);backdrop-filter:blur(14px);border:1px solid rgba(217,166,80,.35)}
+.price b{display:block;font:700 15px Unbounded,sans-serif;text-transform:uppercase;margin-bottom:6px}
+.price p{font-size:14px;color:var(--soft)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:340px;gap:16px}
+.gal figure{position:relative;overflow:hidden;background:var(--panel)}
+.gal figure.big{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease),filter .6s var(--ease);filter:saturate(.9)}
+.gal figure:hover img{transform:scale(1.06);filter:saturate(1.1)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.gal figure:hover figcaption{opacity:1;transform:none}
+.gal-foot{display:flex;justify-content:center;margin-top:40px}
+
+/* contact banner */
+.cta{position:relative;background:#050505;padding:clamp(50px,6vw,90px) clamp(24px,6vw,100px);overflow:hidden;--c:60px;
+  clip-path:polygon(var(--c) 0,55% 0,calc(55% + 50px) 40px,100% 40px,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,40% 100%,calc(40% - 50px) calc(100% - 40px),0 calc(100% - 40px),0 var(--c))}
+.cta::before{content:"";position:absolute;right:-10%;top:-40%;width:60%;height:180%;background:radial-gradient(closest-side,rgba(217,166,80,.22),transparent);pointer-events:none}
+.cta-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.cta h2{font-size:clamp(28px,3.4vw,54px)}
+.cta .lead{margin-top:20px;color:var(--soft);max-width:460px}
+.cta .phone{margin-top:30px;font:700 clamp(24px,2.4vw,36px) Unbounded,sans-serif;display:inline-block}
+.cta .phone:hover{color:var(--gold)}
+.socials{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.socials .btn{height:66px;justify-content:flex-start;padding:0 24px;font-size:13px}
+.socials .btn svg{width:22px;height:22px}
+.socials .btn small{margin-left:auto;font-size:11px;opacity:.8;letter-spacing:.06em;text-transform:none;font-weight:500}
+.socials .wide{grid-column:span 2}
+
+footer{padding:50px 0 40px;margin-top:var(--pad);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer img{height:52px;width:auto}
+footer nav{display:flex;gap:26px;flex-wrap:wrap}
+footer nav a{font-size:14px;color:var(--muted)}
+footer nav a:hover{color:var(--text)}
+footer .cap{letter-spacing:.12em}
+footer .credit{display:block;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center}
+footer .credit b{font-weight:600;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1200px){
+  nav.main{display:none}
+  .burger{display:block}
+  .bento{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .bx-tall{grid-row:auto;min-height:440px}
+  .bento > :nth-child(3){order:4}
+  .bx{min-height:300px}
+}
+@media (max-width:960px){
+  .hero .wrap,.when,.about,.proc,.cta-grid{grid-template-columns:1fr}
+  .hero-media{height:520px;min-height:0}
+  .sec-top{flex-direction:column;align-items:flex-start}
+  .proc-img{position:relative;top:0;height:460px}
+  .about-img{min-height:420px}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .tel{display:none}
+}
+@media (max-width:640px){
+  :root{--c:16px}
+  .bar{height:78px}
+  .logo img{height:44px}
+  .bar-right .btn{display:none}
+  .hero{padding-top:110px}
+  .hero h1{font-size:clamp(28px,8.6vw,40px)}
+  .hero .lead{font-size:16px}
+  .hero-cta .btn{flex:1 1 100%}
+  .trust{grid-template-columns:1fr 1fr 1fr;margin-top:40px}
+  .trust div{padding-right:12px;margin-right:12px}
+  .trust b{font-size:17px}
+  .trust span{font-size:11.5px}
+  .hero-media{height:400px}
+  .badge{width:104px;height:104px;right:-6px;top:-30px;bottom:auto}
+  .badge b{font-size:30px}
+  .badge span{font-size:9px}
+  .when ul{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr}
+  .bx{padding:24px}
+  .bx-split{padding-right:24px;min-height:420px;justify-content:flex-end}
+  .bx-split .bimg{left:0}
+  .bx-split .bimg img{object-position:center 20%}
+  .bx-split .bimg::after{background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.6) 40%,rgba(10,10,11,.05) 75%)}
+  .bx-split .more{margin-top:24px}
+  .stat{grid-template-columns:1fr;gap:8px}
+  .stat .cap{grid-row:auto}
+  .stat p{grid-column:1;grid-row:auto;text-align:left;max-width:none}
+  .gal{gap:8px;grid-auto-rows:230px}
+  .gal figcaption{opacity:1;transform:none;font-size:9.5px;padding:30px 10px 10px}
+  .cta{--c:24px;clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+  .socials{grid-template-columns:1fr}
+  .socials .wide{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></g><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.2 1.8 3.6 4 3.9v3.3c-1.5 0-2.9-.4-4-1.2v6.3c0 3.4-2.7 5.7-5.8 5.7A5.6 5.6 0 0 1 5.2 15.4c0-3.3 2.8-5.9 6.4-5.5v3.4c-1.6-.4-3 .7-3 2.1 0 1.3 1 2.3 2.3 2.3 1.4 0 2.4-1 2.4-2.6V3h3.3z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+  <symbol id="i-arr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+</svg>
+
+<header id="hdr">
+  <div class="wrap bar">
+    <a href="#top" class="logo" aria-label="MarkMir Construct"><img src="img/logo-full.png" alt="MarkMir Construct"></a>
+    <nav class="main">
+      <a href="#servicii">Servicii</a>
+      <a href="#lucrari">Lucrări</a>
+      <a href="#despre">Despre noi</a>
+      <a href="#etape">Etape</a>
+      <a href="#contact">Contacte</a>
+    </nav>
+    <div class="bar-right">
+      <a class="tel js-tel" href="#"><b>+373 61 001 900</b><span>Telefon / WhatsApp</span></a>
+      <a class="btn btn-gold" href="#contact">Cere oferta</a>
+      <button class="burger" aria-label="Meniu" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav">
+  <a href="#servicii">Servicii</a>
+  <a href="#lucrari">Lucrări</a>
+  <a href="#despre">Despre noi</a>
+  <a href="#etape">Etape</a>
+  <a href="#contact">Contacte</a>
+  <a class="tel-m js-tel" href="#">+373 61 001 900</a>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="img/fundatie-apus.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="hero-txt">
+      <div class="eyebrow cap">Peste 13 ani de experiență reală</div>
+      <h1 class="h">Construim de la zero. <span class="gold">Finisăm la cheie.</span></h1>
+      <p class="lead">Case noi, betonare, săpături și reparații de apartamente. Un singur contract și o echipă care duce lucrarea de la groapa de fundație până la cheia în mâna dumneavoastră.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold js-wa" href="#" data-msg="Bună ziua! Aș vrea o ofertă pentru o lucrare.">
+          <svg><use href="#i-wa"/></svg>Cere oferta ta
+        </a>
+        <a class="btn btn-ghost" href="#lucrari">Vezi lucrările</a>
+      </div>
+      <div class="trust">
+        <div><b class="gold">13+</b><span>ani pe șantier</span></div>
+        <div><b>1</b><span>contract pentru tot</span></div>
+        <div><b>Deviz</b><span>individual</span></div>
+      </div>
+    </div>
+
+    <div class="hero-media" id="heroMedia">
+      <div class="hcard hc-a cut" data-depth="10"><img src="img/fundatie-apus.jpg" alt="Săpătură pentru fundație la apus, cu excavator"><span class="tag">Fundație / de la zero</span></div>
+      <div class="hcard hc-b cut-r" data-depth="22"><img src="img/betonare-strada.jpg" alt="Echipa MarkMir la betonare"><span class="tag">Betonare</span></div>
+      <div class="hcard hc-c cut" data-depth="16"><img src="img/interior-cheie.jpg" alt="Apartament înainte și după reparație"><span class="tag">Reparație la cheie</span></div>
+      <div class="badge"><div><b class="gold">13+</b><span>ani<br>experiență</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="mq">
+    <span>Case de la zero<i>/</i></span><span>Betonare<i>/</i></span><span>Reparații la cheie<i>/</i></span><span>Electricitate<i>/</i></span><span>Bloc sanitar<i>/</i></span><span>Săpături și demolări<i>/</i></span>
+    <span>Case de la zero<i>/</i></span><span>Betonare<i>/</i></span><span>Reparații la cheie<i>/</i></span><span>Electricitate<i>/</i></span><span>Bloc sanitar<i>/</i></span><span>Săpături și demolări<i>/</i></span>
+  </div>
+</div>
+
+<section class="s">
+  <div class="wrap when">
+    <div class="rv">
+      <div class="eyebrow cap">Când ne chemați</div>
+      <h2 class="h sec-t">Aveți o lucrare,<br><span class="gold">noi o ducem la capăt</span></h2>
+    </div>
+    <ul class="rv">
+      <li>Aveți teren și vreți o casă</li>
+      <li>Ați luat apartament la alb</li>
+      <li>Trebuie turnată fundația sau placa</li>
+      <li>Baia și bucătăria cer refăcute</li>
+      <li>Casa veche trebuie demolată</li>
+      <li>Instalația electrică e de schimbat</li>
+    </ul>
+  </div>
+</section>
+
+<section class="s" id="servicii" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div>
+        <div class="eyebrow cap">Servicii</div>
+        <h2 class="h sec-t">Ce facem</h2>
+      </div>
+      <p>Lucrăm pe tot drumul unei construcții. Puteți lua doar o etapă sau toată lucrarea, într-un singur contract.</p>
+    </div>
+
+    <div class="bento">
+      <a href="#contact" class="bx bx-tall bx-photo cut rv">
+        <div class="bimg"><img src="img/placa-santier.jpg" alt="Șantier de casă cu placa pe popi"></div>
+        <span class="num">01</span>
+        <h3 class="h">Case de la zero</h3>
+        <p>Săpătură, fundație, pereți, planșee și acoperiș. Apoi finisajele, până la cheie.</p>
+        <div class="tags"><span>Fundație</span><span>Structură</span><span>Acoperiș</span><span>Finisaje</span></div>
+        <span class="more">Discutăm casa <svg><use href="#i-arr"/></svg></span>
+      </a>
+
+      <a href="#contact" class="bx bx-split cut-r rv">
+        <div class="bimg"><img src="img/betonare-strada.jpg" alt="Betonare"></div>
+        <span class="num">02</span>
+        <h3 class="h">Betonare</h3>
+        <p>Fundații, plăci, șape și platforme. Cofraj, armare și turnare.</p>
+        <span class="more">Detalii <svg><use href="#i-arr"/></svg></span>
+      </a>
+
+      <a href="#contact" class="bx bx-tall bx-photo cut-r rv">
+        <div class="bimg"><img src="img/interior-cheie.jpg" alt="Apartament înainte și după" style="object-position:62% center"></div>
+        <span class="num">04</span>
+        <h3 class="h">Reparații la cheie</h3>
+        <p>Apartamente și case. Tu primești cheia, noi ne ocupăm de tot.</p>
+        <div class="tags"><span>Electricitate</span><span>Bloc sanitar</span><span>Pereți și tavane</span><span>Pardoseli</span></div>
+        <span class="more">Discutăm reparația <svg><use href="#i-arr"/></svg></span>
+      </a>
+
+      <a href="#contact" class="bx bx-photo cut rv">
+        <div class="bimg"><img src="img/sapatura-curte.jpg" alt="Săpătură cu excavator în curte" style="object-position:center 60%"></div>
+        <span class="num">03</span>
+        <h3 class="h">Săpături și demolări</h3>
+        <p>Lucrăm cu excavator: săpături, demolări și nivelarea terenului.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="despre" style="padding-top:0">
+  <div class="wrap about">
+    <div class="about-img rv">
+      <div class="ph ph-1 cut"><img src="img/excavator-camion.jpg" alt="Excavator și camion pe șantier MarkMir"><span class="tag">Săpături</span></div>
+      <div class="ph ph-2 cut-r"><img src="img/placa-popi.jpg" alt="Placă turnată, sprijinită pe popi"><span class="tag">Placă turnată</span></div>
+    </div>
+    <div class="rv">
+      <div class="eyebrow cap">Despre noi</div>
+      <h2 class="h sec-t">13 ani pe șantier, <span class="gold">nu în reclame</span></h2>
+      <p class="intro">MarkMir Construct face construcții și reparații în Chișinău și împrejurimi. Am lucrat la case de la zero, la blocuri sanitare, la instalații electrice și la apartamente predate la cheie.</p>
+      <div class="stats">
+        <div class="stat"><b class="gold" data-count="13">13+</b><span class="cap">ani de experiență</span><p>Echipa lucrează în construcții de peste 13 ani.</p></div>
+        <div class="stat"><b data-count="1">1</b><span class="cap">contract pentru tot</span><p>De la săpătură la finisaj, fără să căutați alți meșteri.</p></div>
+        <div class="stat"><b data-count="6900">6 900+</b><span class="cap">urmăritori pe Instagram</span><p>Acolo arătăm lucrările pas cu pas, cu tot cu proces.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="etape" style="padding-top:0">
+  <div class="wrap proc">
+    <div class="rv">
+      <div class="eyebrow cap">Etape de lucru</div>
+      <h2 class="h sec-t" style="margin-bottom:40px">Cum decurge <span class="gold">o lucrare</span></h2>
+      <ol class="steps">
+        <li><h3>Ne scrieți sau ne sunați</h3><em>[01]</em><p>Spuneți pe scurt ce aveți de făcut. Pozele și dimensiunile ajută mult.</p></li>
+        <li><h3>Venim la obiect</h3><em>[02]</em><p>Vedem terenul sau apartamentul, luăm măsurile și discutăm ce vreți.</p></li>
+        <li><h3>Deviz individual</h3><em>[03]</em><p>Calculăm lucrările și materialele pentru obiectul dumneavoastră, nu după un tabel.</p></li>
+        <li><h3>Contract și execuție</h3><em>[04]</em><p>Semnăm un singur contract și lucrăm pe etape, cu poze de pe șantier.</p></li>
+        <li><h3>Predarea cheilor</h3><em>[05]</em><p>Verificăm lucrarea împreună și vă dăm cheile.</p></li>
+      </ol>
+    </div>
+    <div class="proc-img cut-r rv">
+      <img src="img/cofraj-scara.jpg" alt="Cofraj și schele pe șantier">
+      <div class="price"><b>Prețul <span class="gold">se face individual</span></b><p>Depinde de suprafață, materiale și starea obiectului. De aceea îl spunem după ce vedem lucrarea.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="lucrari" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div>
+        <div class="eyebrow cap">Lucrări</div>
+        <h2 class="h sec-t">Din șantierele noastre</h2>
+      </div>
+      <p>Poze reale din lucrările noastre, fără randări. Procesul complet îl găsiți pe Instagram.</p>
+    </div>
+    <div class="gal">
+      <figure class="big cut rv"><img loading="lazy" src="img/fundatie-apus.jpg" alt="Trasarea fundației la apus"><figcaption>Trasarea fundației</figcaption></figure>
+      <figure class="rv"><img loading="lazy" src="img/betonare-strada.jpg" alt="Betonare"><figcaption>Betonare</figcaption></figure>
+      <figure class="rv"><img loading="lazy" src="img/excavator-camion.jpg" alt="Săpături cu excavator"><figcaption>Săpături</figcaption></figure>
+      <figure class="cut-r rv"><img loading="lazy" src="img/placa-popi.jpg" alt="Placă turnată"><figcaption>Placă turnată</figcaption></figure>
+      <figure class="rv"><img loading="lazy" src="img/cofraj-scara.jpg" alt="Cofraj"><figcaption>Cofraj</figcaption></figure>
+      <figure class="rv"><img loading="lazy" src="img/sapatura-curte.jpg" alt="Săpătură în curte"><figcaption>Săpătură în curte</figcaption></figure>
+      <figure class="cut rv"><img loading="lazy" src="img/placa-santier.jpg" alt="Casă de la zero, structura"><figcaption>Casă de la zero</figcaption></figure>
+    </div>
+    <div class="gal-foot rv">
+      <a class="btn b-ig js-ig" href="#" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Mai multe pe Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta rv">
+      <div class="cta-grid">
+        <div>
+          <div class="eyebrow cap">Contacte</div>
+          <h2 class="h">Spuneți-ne ce aveți <span class="gold">de construit</span></h2>
+          <p class="lead">Scrieți pe scurt ce lucrare aveți și unde se află obiectul. Revenim cu întrebări și stabilim vizita.</p>
+          <a class="phone js-tel" href="#">+373 61 001 900</a>
+        </div>
+        <div class="socials">
+          <a class="btn b-wa wide js-wa" href="#" data-msg="Bună ziua! Am o lucrare și aș vrea o ofertă."><svg><use href="#i-wa"/></svg>WhatsApp<small>răspuns în chat</small></a>
+          <a class="btn btn-gold wide js-tel" href="#"><svg><use href="#i-tel"/></svg>Sună acum<small>+373 61 001 900</small></a>
+          <a class="btn b-ig js-ig" href="#" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
+          <a class="btn b-fb js-fb" href="#" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a>
+          <a class="btn b-tt wide js-tt" href="#" target="_blank" rel="noopener"><svg><use href="#i-tt"/></svg>TikTok</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-full.png" alt="MarkMir Construct">
+    <nav>
+      <a href="#servicii">Servicii</a><a href="#lucrari">Lucrări</a><a href="#despre">Despre noi</a><a href="#etape">Etape</a><a href="#contact">Contacte</a>
+    </nav>
+    <span class="cap">© 2026 MarkMir Construct / Chișinău</span>
+  </div>
+  <div class="wrap credit">Demo realizat de <b>Vadim Melnic</b></div>
+</footer>
+
+<script>
+const CFG = {
+  whatsapp: '37361001900',
+  phone: '+37361001900',
+  instagram: 'https://www.instagram.com/markmirconstruct.md/',
+  facebook: '#',
+  tiktok: '#'
+};
+const $$ = s => document.querySelectorAll(s);
+$$('.js-wa').forEach(a => { a.href = 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(a.dataset.msg || ''); a.target = '_blank'; a.rel = 'noopener'; });
+$$('.js-tel').forEach(a => a.href = 'tel:' + CFG.phone);
+$$('.js-ig').forEach(a => a.href = CFG.instagram);
+$$('.js-fb').forEach(a => a.href = CFG.facebook);
+$$('.js-tt').forEach(a => a.href = CFG.tiktok);
+
+const hdr = document.getElementById('hdr');
+const onScroll = () => hdr.classList.toggle('solid', scrollY > 40);
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+const mnav = document.getElementById('mnav');
+document.getElementById('burger').onclick = () => mnav.classList.toggle('open');
+mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mnav.classList.remove('open')));
+
+const media = document.getElementById('heroMedia');
+if (matchMedia('(hover:hover)').matches) {
+  addEventListener('mousemove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    media.querySelectorAll('.hcard').forEach(c => {
+      const d = +c.dataset.depth;
+      c.style.transform = `translate(${-x*d}px,${-y*d}px)`;
+    });
+  });
+}
+
+function countUp(el){
+  const to = +el.dataset.count, txt = el.textContent, suffix = txt.replace(/[\d\s]/g,'');
+  const t0 = performance.now(), dur = 1400;
+  const step = t => {
+    const p = Math.min(1,(t-t0)/dur), v = Math.round(to * (1 - Math.pow(1-p,3)));
+    el.textContent = v.toLocaleString('ro-RO').replace(/\./g,' ') + (p === 1 ? suffix : '');
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('[data-count]').forEach(countUp);
+  io.unobserve(e.target);
+}), {threshold:.12});
+$$('.rv').forEach(el => {
+  const sib = [...el.parentElement.children].filter(c => c.classList.contains('rv'));
+  if (sib.length > 2) el.style.transitionDelay = (sib.indexOf(el) % 4) * 90 + 'ms';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
